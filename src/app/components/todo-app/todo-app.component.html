@@ -1,0 +1,16 @@
+<div class="app-list">
+  <app-todo-list
+    [tasks]="queriedTasks"
+    [activeTask]="activeTask"
+    (activeTaskSelect)="SetActiveTask($event)"
+    (shiftUp)="ShiftUp($event)"
+    (shiftDown)="ShiftDown($event)"
+    (updateQuery)="UpdateTasks($event)"
+  ></app-todo-list>
+</div>
+<div class="app-details">
+  <app-todo-detail
+    [task]="activeTask"
+    (taskChange)="DebouncedSaveUser()"
+    (deleteTask)="DeleteTask($event)"></app-todo-detail>
+</div>

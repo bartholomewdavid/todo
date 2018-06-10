@@ -1,0 +1,66 @@
+$heading_height: 60px;
+
+:host {
+    display: block;
+}
+
+.todo-detail-heading {
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    height: $heading_height;
+    box-sizing: border-box;
+
+    h2 {
+        margin: 0;
+        padding-left: 1rem;
+        line-height: $heading_height;
+    }
+}
+
+.task {
+    padding: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+p {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+input[type=text],
+input[type=date],
+textarea,
+select {
+    padding: .5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .1);
+    transition: all .15s ease-in;
+
+    &:hover {
+        border-color: rgba(0, 0, 0, .7);
+    }
+}
+
+.delete-task {
+    display: inline-block;
+    background: rgb(200, 50, 50);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 50, 50);
+}
+
+.task-not-selected {
+    h2 {
+        margin: 0;
+    }
+}

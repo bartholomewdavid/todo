@@ -1,0 +1,26 @@
+<div class="todo-list-heading">
+  <h2>Task List</h2>
+</div>
+<div class="todo-list-content" [ngClass]="{'no-filter': activeQuery === queries[0]}">
+  <ul>
+    <li class="query">
+      <select (change)="UpdateQuery()" [(ngModel)]="activeQuery">
+        <option *ngFor="let query of queries" [ngValue]="query">Filter: {{ query | query }}</option>
+      </select>
+    </li>
+    <li class="create-task"><button type="click" (click)="CreateTask()">Create Task</button></li>
+
+    <li class="todo-detail"
+      *ngFor="let task of tasks"
+      [ngClass]="{
+        selected: task === activeTask,
+        complete: IsComplete(task)
+      }"
+      (click)="EmitActiveTask(task)">
+      <h3>{{ task.title }}</h3>
+      <span *ngIf="task.dueDate">{{ task.dueDate }}</span>
+      <span (click)="ShiftUp(task)" class="shift-up">^</span>
+      <span (click)="ShiftDown(task)" class="shift-down">^</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.app-list {
+    position: absolute;
+    float: left;
+    width: 33%;
+    height: 100%;
+    box-sizing: border-box;
+
+    border-right: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 2px 0 2px rgba(0, 0, 0, .1);
+}
+
+.app-details {
+    position: absolute;
+    float: right;
+    width: 67%;
+    height: 100%;
+    left: 33%;
+}

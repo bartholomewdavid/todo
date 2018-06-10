@@ -1,0 +1,32 @@
+<div class="todo-detail-heading">
+  <h2>Task Details</h2>
+</div>
+
+<div class="task" *ngIf="task">
+  <div class="input-group">
+    <p>Title</p>
+    <input (blur)="EmitChange()" (keyup)="EmitChange()" type="text" [(ngModel)]="task.title" />
+  </div>
+  <div class="input-group">
+    <p>Description</p>
+    <textarea (blur)="EmitChange()" (keyup)="EmitChange()" [(ngModel)]="task.description"></textarea>
+  </div>
+  <div class="input-group">
+    <p>Status</p>
+    <select (change)="EmitChange()" [(ngModel)]="task.status">
+      <option *ngFor="let status of statuses" [ngValue]="status">{{ status | status }}</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <p>Due Date</p>
+    <input (blur)="EmitChange()" (change)="EmitChange()" type="date" [(ngModel)]="task.dueDate" />
+  </div>
+
+  <div class="input-group">
+    <button class="delete-task" (click)="DeleteTask()">Delete Task</button>
+  </div>
+</div>
+
+<div class="task task-not-selected" *ngIf="!task">
+  <h2>No Task Selected...</h2>
+</div>
