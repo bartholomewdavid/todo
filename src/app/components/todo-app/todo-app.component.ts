@@ -63,6 +63,8 @@ export class TodoAppComponent implements OnInit, OnChanges {
   ShiftUp(task: Task) {
     const index = this.user.tasks.indexOf(task)
 
+    if (index === 0) { return; }
+
     // Array will now be one shorter
     this.user.tasks.splice(index, 1);
     // Insert one above
@@ -71,6 +73,8 @@ export class TodoAppComponent implements OnInit, OnChanges {
 
   ShiftDown(task: Task) {
     const index = this.user.tasks.indexOf(task)
+
+    if (index === this.user.tasks.length - 1) { return; }
 
     // Array will now be one shorter
     this.user.tasks.splice(index, 1);
